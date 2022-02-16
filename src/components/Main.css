@@ -1,0 +1,59 @@
+.main-container {
+  /* position: relative; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 2rem;
+  width: 100vw;
+  height: 82.8vh;
+  background-color: black;
+  overflow: auto;
+}
+
+@media screen and (max-width: 500px) {
+  .main-container {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 73.3vh;
+  }
+
+  .main-header {
+    background-size: 200px !important;
+    background-position: left -80px top -10px !important;
+    width: 20rem !important;
+  }
+
+  .main-container::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.main-container::-webkit-scrollbar {
+  display: none;
+}
+
+.main-header {
+  filter: grayscale();
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black !important;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(0,0,0,1)), url(../assets/logo192.png);
+  background-size: 400px;
+  background-position: left -100px top 0;
+  background-repeat: no-repeat;
+  height: 15.5rem;
+}
+
+.main-header p {
+  margin: 0.25rem 0;
+}
+
+.main-text-container {
+  align-self: flex-end;
+  width: calc(100vw - 23rem);
+}

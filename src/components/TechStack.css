@@ -1,0 +1,92 @@
+.techstack-container {
+  background-color: black ;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+    'html css javascript'
+    'react redux react-router'
+    'axios empty empty';
+  grid-template-rows: repeat(3, 250px);
+  overflow: scroll;
+}
+
+.img-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-container:hover {
+  background-color: rgb(32, 32, 32);
+}
+
+.img-container img {
+  width: 150px;
+  margin-right: 4rem;
+}
+
+.tech-stack-text {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.html {
+  grid-area: html;
+}
+
+.css {
+  grid-area: css;
+}
+
+.javascript {
+  grid-area: javascript;
+}
+
+.react {
+  grid-area: react;
+}
+
+.redux {
+  grid-area: redux;
+}
+
+.react-router {
+  grid-area: react-router;
+}
+
+.axios {
+  grid-area: axios;
+}
+
+.empty {
+  grid-area: empty;
+}
+
+
+@media screen and (max-width: 500px) {
+  .techstack-container {
+    padding: 2rem 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .img-container {
+    margin: 1rem 0;
+    height: 40rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .img-container img {
+    width: 150px;
+    margin-right: 2rem;
+  }
+}

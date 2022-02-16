@@ -1,0 +1,32 @@
+.construction-container {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 82.8vh;
+  margin: auto 0;
+}
+
+.construction-img {
+  width: 700px;
+} 
+
+.construction-container h1 {
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .construction-img {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .construction-img {
+    width: 200px;
+  }
+}
+
+
+  

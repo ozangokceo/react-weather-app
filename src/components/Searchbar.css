@@ -1,0 +1,33 @@
+.searchbar-container {
+  height: 2rem;
+  width: 15rem;
+  margin-left: 1rem;
+  border: none;
+}
+
+.searchbar-container > input {
+  height: inherit;
+  width: inherit;
+  border: none;
+  outline: none;
+}
+
+.searchbar-container > input:focus {
+  outline: none;
+}
+
+button {
+  display: inline;
+  width: 5rem;
+  height: 2rem;
+  background-color: gray;
+  border: none;
+}
+
+button:hover {
+  background-color: gainsboro;
+}
+
+.test-h1 {
+  color: black;
+}

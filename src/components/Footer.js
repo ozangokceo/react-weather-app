@@ -21,16 +21,15 @@ function Footer() {
         <p>React Weather App Copyright&copy; {date}</p>
       </div>
       <div className='logo-container-footer'>
-        <a
-          href='https://reactjs.org/'
-          target='_blank'
-          rel='noopener noreferrer'
-          title='ReactJs Docs'
-        >
+        <a href='https://reactjs.org/' target='_blank' rel='noopener noreferrer' title='ReactJs Docs'>
           <img src={logo1} alt='logo1' />
         </a>
-        <img src={logo2} alt='logo2' />
+        <a href='https://www.instagram.com/gokceoozan/' target='_blank' rel='noopener noreferrer' title='Instagram Account'>
+          <img src={logo2} alt='logo2' />
+        </a>
+        <a href='https://www.linkedin.com/in/ozan-gokceoglu-907458102/' target='_blank' rel='noopener noreferrer' title='LinkedIn Account'>
         <img src={logo3} alt='logo3' />
+        </a>
         <img src={logo4} alt='logo4' />
         {/* <img src={logo5} alt='logo5'/> */}
         <img src={logo6} alt='logo6' />

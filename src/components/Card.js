@@ -3,7 +3,7 @@ import { MdOutlineClose } from 'react-icons/md';
 import logo from '../assets/logo192.png';
 import axios from 'axios';
 
-import './Card.css';
+// import './Card.css';
 
 const api = {
   key: '20e361c21e4e4846806210103221401',

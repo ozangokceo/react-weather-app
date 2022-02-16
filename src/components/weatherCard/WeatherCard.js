@@ -1,15 +1,66 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import { MdOutlineClose } from 'react-icons/md';
+import axios from 'axios';
 
-import styles from './WeatherCard.css'
+import './WeatherCard.css'
 
-function WeatherCard() {
+const api = {
+  key: '20e361c21e4e4846806210103221401',
+  base: 'https://api.worldweatheronline.com/premium/v1/weather.ashx',
+};
+
+function WeatherCard({ location, locationDeleteHandler }) {
+  const [weather, setWeather] = useState({});
+  const [spinnerDisplay, setSpinnerDisplay] = useState(true);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    async function requestHandler() {
+      const { key, base } = api;
+
+      try {
+        const response = await axios.get(`${base}?key=${key}&q=${location}&format=json`);
+        const conditions = await response.data['data']['current_condition'];
+        console.log(response);
+
+        const degreesC = await conditions[0]['temp_C'];
+        const degreesF = await conditions[0]['temp_F'];
+        const description = await conditions[0]['weatherDesc'][0]['value'];
+        const weatherIconURL = await conditions[0]['weatherIconUrl'][0]['value'];
+        const windSpeed = await conditions[0]['windspeedKmph'];
+
+        setSpinnerDisplay(false);
+
+        setWeather({
+          degreesC,
+          degreesF,
+          description,
+          weatherIconURL,
+          windSpeed,
+        });
+      } catch (err) {
+        console.log(err);
+        setSpinnerDisplay(false);
+        setError(true);
+      }
+    }
+    requestHandler();
+
+    return;
+  }, [location, error, spinnerDisplay]);
+
+  const { degreesC, degreesF, description, weatherIconURL, windSpeed } = weather;
+
   return (
     <div className="weatherCard">
       <div id="san-francisco" className="card">
       <div className="card-header">
+      <div className='card-svg' onClick={() => locationDeleteHandler(location)}>
+        <MdOutlineClose />
+      </div>
       <div className="left-side">
-      <h2 className="city">San Francisco</h2>
-      <span className="currently-weather">Sunny</span>
+      <h2 className="city">{location}</h2>
+      <span className="currently-weather">{description}</span>
       <div className="wind"><span className="wind-icon"></span>8<span className="mph">mph</span></div>
       <span className="temperature">63°</span>
       </div>

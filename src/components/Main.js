@@ -16,10 +16,12 @@ function Main({ locationArray, locationDeleteHandler }) {
         </div>
       </div>
       <main className='main-container'>
-        <WeatherCard/>
-        {locationArray.map((item, index) => (
+      {locationArray.map((item, index) => (
+        <WeatherCard key={Math.random()} city={item} location={locationArray[index]} locationDeleteHandler={locationDeleteHandler}/>
+      ))}
+        {/* {locationArray.map((item, index) => (
           <Card key={Math.random()} city={item} location={locationArray[index]} locationDeleteHandler={locationDeleteHandler} />
-        ))}
+        ))} */}
       </main>
     </React.Fragment>
   );

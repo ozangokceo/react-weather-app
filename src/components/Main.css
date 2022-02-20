@@ -40,7 +40,8 @@
   .main-container {
     flex-direction: column;
     flex-wrap: nowrap;
-    height: 73.3vh;
+    justify-content: space-between;
+    height: 50vh;
   }
 
   .main-text-container {

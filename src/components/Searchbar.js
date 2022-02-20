@@ -8,7 +8,7 @@ import './Searchbar.css';
 
 const api = {
   key: 'qbAm3gKhivuDAkstlyU3vWJSlpIzQ8cm',
-  base: 'http://dataservice.accuweather.com/locations/v1/cities/autocomplete',
+  base: 'https://dataservice.accuweather.com/locations/v1/cities/autocomplete',
 };
 
 function Searchbar({ updateHandler }) {

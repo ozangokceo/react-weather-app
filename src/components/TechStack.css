@@ -1,14 +1,14 @@
 .techstack-container {
   background-color: black ;
   width: 100%;
-  height: 100vh;
+  height: 78vh;
   display: grid;
   grid-template-areas:
     'html css javascript'
     'react redux react-router'
     'axios empty empty';
-  grid-template-rows: repeat(3, 250px);
-  overflow: scroll;
+    grid-template-rows: repeat(3, 250px);
+    overflow: scroll;
 }
 
 .img-container {
@@ -16,6 +16,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  min-width: 375px;
 }
 
 .img-container:hover {
@@ -49,8 +50,14 @@
   grid-area: react;
 }
 
-.redux {
+.logoRedux {
   grid-area: redux;
+}
+
+img.logoReactRouter,
+img.logoRedux {
+  width: 275px;
+  margin-right: 0;
 }
 
 .react-router {
@@ -66,19 +73,19 @@
 }
 
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 768px) {
   .techstack-container {
     padding: 2rem 0;
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
   }
 
   .img-container {
     margin: 1rem 0;
-    height: 40rem;
     display: flex;
     flex-direction: row;
     align-items: center;

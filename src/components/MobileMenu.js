@@ -11,11 +11,14 @@ function MobileMenu({ displayMobileMenu }) {
         <Link to='/'>
           <li className='navbar-link'>Home</li>
         </Link>
-        <Link to='/construction'>
-          <li className='navbar-link'>Site Map</li>
+        <Link to='/techstack'>
+          <li className='navbar-link'>Tech Stack</li>
         </Link>
         <Link to='/construction'>
-          <li className='navbar-link'>Services</li>
+          <li className='navbar-link'>About</li>
+        </Link>
+        <Link to='/construction'>
+          <li className='navbar-link'>Projects</li>
         </Link>
       </ul>
     </div>

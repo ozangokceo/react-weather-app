@@ -53,6 +53,9 @@ function Navbar({ updateHandler }) {
         <Link to='/construction'>
           <li className='navbar-link'>About</li>
         </Link>
+        <Link to='/construction'>
+          <li className='navbar-link'>Projects</li>
+        </Link>
       </ul>
       <div
         className='menu-icon-container'

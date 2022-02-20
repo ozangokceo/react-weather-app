@@ -13,7 +13,7 @@ function Dropdown({
   isSearching,
   setIsSearching,
   updateHandler,
-  cityList,
+  searchAPIData,
   spinnerDisplay,
 }) {
   const listRef = useRef(null);
@@ -40,17 +40,17 @@ function Dropdown({
         {spinnerDisplay ? (
           <img className='spinner' src={logo} alt='spinner' />
         ) : (
-          cityList.slice(0, 10).map((item) => (
-            <div key={Math.random()} className='list-item-container'>
+          searchAPIData.slice(0, 10).map((item) => (
+            <div key={item.Key} className='list-item-container'>
               <BiWorld />
               <li
                 id='dropdown-item'
-                onClick={() => updateHandler(item.name)}
+                onClick={() => updateHandler({id: item.Key, location: item.LocalizedName })}
                 className='list-item'
                 ref={listRef}
                 // key={Math.random().toFixed(10)}
               >
-                {item.name}, {item.country}
+                {item.LocalizedName}, {item.Country.LocalizedName}
               </li>
             </div>
           ))

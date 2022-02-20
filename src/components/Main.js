@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import Card from './Card';
 import WeatherCard from './weatherCard/WeatherCard';
 
 import './Main.css';
@@ -19,9 +18,6 @@ function Main({ locationArray, locationDeleteHandler }) {
       {locationArray.map((item, index) => (
         <WeatherCard key={Math.random()} city={item} location={locationArray[index]} locationDeleteHandler={locationDeleteHandler}/>
       ))}
-        {/* {locationArray.map((item, index) => (
-          <Card key={Math.random()} city={item} location={locationArray[index]} locationDeleteHandler={locationDeleteHandler} />
-        ))} */}
       </main>
     </React.Fragment>
   );

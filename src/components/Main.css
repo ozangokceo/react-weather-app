@@ -7,7 +7,7 @@
   align-items: flex-start;
   padding: 2rem;
   width: 100vw;
-  height: 82.8vh;
+  height: 57vh;
   background-color: black;
   overflow: auto;
 }
@@ -51,7 +51,7 @@
   }
 
   .main-header {
-    height: 10.5rem;
+    height: 12.5rem;
     align-items: center;
     justify-content: flex-start;
     width: 10rem !important;

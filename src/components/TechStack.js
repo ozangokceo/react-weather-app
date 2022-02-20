@@ -26,11 +26,9 @@ function TechStack() {
       </div>
       <div className='img-container'>
         <img src={logoRedux} alt='logoRedux' className='logoRedux' />
-        <p className='tech-stack-text'>Redux</p>
       </div>
       <div className='img-container'>
         <img src={logoReactRouter} alt='logoReactRouter' className='logoReactRouter' />
-        <p className='tech-stack-text'>React Router</p>
       </div>
       <div className='img-container'>
         {' '}

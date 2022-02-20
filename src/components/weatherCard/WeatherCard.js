@@ -5,8 +5,8 @@ import axios from 'axios';
 import './WeatherCard.css'
 
 const api = {
-  key: '20e361c21e4e4846806210103221401',
-  base: 'https://api.worldweatheronline.com/premium/v1/weather.ashx',
+  key: 'qbAm3gKhivuDAkstlyU3vWJSlpIzQ8cm',
+  base: 'https://dataservice.accuweather.com/currentconditions/v1/',
 };
 
 function WeatherCard({ location, locationDeleteHandler }) {
@@ -19,15 +19,14 @@ function WeatherCard({ location, locationDeleteHandler }) {
       const { key, base } = api;
 
       try {
-        const response = await axios.get(`${base}?key=${key}&q=${location}&format=json`);
-        const conditions = await response.data['data']['current_condition'];
+        const response = await axios.get(`${base}${location.id}?apikey=${key}&format=json`);
         console.log(response);
 
-        const degreesC = await conditions[0]['temp_C'];
-        const degreesF = await conditions[0]['temp_F'];
-        const description = await conditions[0]['weatherDesc'][0]['value'];
-        const weatherIconURL = await conditions[0]['weatherIconUrl'][0]['value'];
-        const windSpeed = await conditions[0]['windspeedKmph'];
+        // const degreesC
+        // const degreesF
+        // const description
+        // const weatherIconURL
+        // const windSpeed
 
         setSpinnerDisplay(false);
 
@@ -59,7 +58,7 @@ function WeatherCard({ location, locationDeleteHandler }) {
         <MdOutlineClose />
       </div>
       <div className="left-side">
-      <h2 className="city">{location}</h2>
+      <h2 className="city">{location.location}</h2>
       <span className="currently-weather">{description}</span>
       <div className="wind"><span className="wind-icon"></span>8<span className="mph">mph</span></div>
       <span className="temperature">63°</span>
